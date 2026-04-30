@@ -13,7 +13,18 @@ directly.
 
 ## Installation
 
-From the repository root:
+**1. Get the repository**
+
+With Git:
+```
+git clone https://github.com/guiorioli/claude-doc-tools.git
+cd claude-doc-tools
+```
+
+Or download the ZIP from GitHub (green "Code" button → "Download ZIP"), extract it,
+and open a terminal in the extracted folder.
+
+**2. Run the installer**
 
 ```
 python install.py
