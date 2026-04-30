@@ -1,0 +1,12 @@
+mammoth
+pdfplumber==0.11.4
+pytesseract
+pandas
+openpyxl
+xlrd
+python-pptx
+odfpy
+beautifulsoup4
+striprtf
+Pillow>=9.1
+tabulate
