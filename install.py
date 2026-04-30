@@ -28,7 +28,12 @@ def snippet() -> str:
         f"1. Run: python \"{CONVERT_SCRIPT}\" <file>\n"
         "2. The script outputs markdown to stdout and writes images to temp dir with their paths\n"
         "3. Read the markdown output; if image paths are listed, read those files too\n"
-        "4. For .doc files: ask the user to convert to .docx first\n"
+        "\n"
+        "Limitations and fallbacks:\n"
+        "- .doc (legacy Word): not supported — ask the user to convert to .docx first\n"
+        "- Scanned PDFs without Tesseract on PATH: pages are exported as images instead of text — read the images directly\n"
+        "- Password-protected PDFs: script will fail — inform the user and ask them to unlock the file\n"
+        "- If the script fails for any reason: inform the user of the error and, if the file is small enough, attempt to read it directly as a fallback\n"
         f"{END_TAG}\n"
     )
 
