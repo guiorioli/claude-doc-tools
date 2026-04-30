@@ -71,7 +71,7 @@ def _write_claude_md(install: bool) -> None:
             if answer != "y":
                 print("Skipped CLAUDE.md update.")
                 return
-            new_content = pattern.sub(snippet(), existing)
+            new_content = pattern.sub(lambda _: snippet(), existing)
         else:
             sep = "" if existing.endswith("\n") or not existing else "\n"
             new_content = existing + sep + ("\n" if existing else "") + snippet()
