@@ -25,7 +25,7 @@ def snippet() -> str:
         f"{START_TAG}\n"
         "## Reading Documents\n"
         "When asked to read .docx, .pdf, .xlsx, .xls, .pptx, .odt, .ods, .odp, .html, .rtf files:\n"
-        f"1. Run: python {CONVERT_SCRIPT} <file>\n"
+        f"1. Run: python \"{CONVERT_SCRIPT}\" <file>\n"
         "2. The script outputs markdown to stdout and writes images to temp dir with their paths\n"
         "3. Read the markdown output; if image paths are listed, read those files too\n"
         "4. For .doc files: ask the user to convert to .docx first\n"
@@ -34,7 +34,7 @@ def snippet() -> str:
 
 
 def allowlist_entry() -> str:
-    return f"Bash(python {CONVERT_SCRIPT}:*)"
+    return f"Bash(python \"{CONVERT_SCRIPT}\":*)"
 
 
 def install() -> int:
