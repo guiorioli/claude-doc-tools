@@ -41,6 +41,12 @@ This will:
 The install is idempotent: if the snippet is already present in `CLAUDE.md`,
 the script asks before overwriting it.
 
+> **Important:** Do not move or delete this repository after installing. The
+> installer records the absolute path to `convert.py` in your Claude Code
+> configuration (`~/.claude/CLAUDE.md` and `~/.claude/settings.json`). If you
+> need to relocate the folder, run `python install.py --uninstall` first, move
+> it, then re-run `python install.py`.
+
 ## Usage
 
 ```
