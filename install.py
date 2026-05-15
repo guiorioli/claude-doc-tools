@@ -20,7 +20,7 @@ CLAUDE_SETTINGS = CLAUDE_DIR / "settings.json"
 # OpenCode paths
 OPENCODE_DIR = Path("~/.config/opencode").expanduser()
 OPENCODE_JSON = OPENCODE_DIR / "opencode.json"
-OPENCODE_MD = OPENCODE_DIR / "opencode.md"
+OPENCODE_MD = OPENCODE_DIR / "AGENTS.md"
 
 START_TAG = "<!-- doc-tools:start -->"
 END_TAG = "<!-- doc-tools:end -->"
@@ -200,7 +200,7 @@ def _write_opencode_md(install: bool, script_path: str) -> None:
         if pattern.search(existing):
             answer = input(f"{OPENCODE_MD} already contains a doc-tools block. Overwrite? [y/N]: ").strip().lower()
             if answer != "y":
-                print("Skipped opencode.md update.")
+                print("Skipped AGENTS.md update.")
                 return
             new_content = pattern.sub(lambda _: snippet(script_path), existing)
         else:
@@ -210,7 +210,7 @@ def _write_opencode_md(install: bool, script_path: str) -> None:
         print(f"Updated {OPENCODE_MD}")
     else:
         if not pattern.search(existing):
-            print("No doc-tools block found in opencode.md.")
+            print("No doc-tools block found in AGENTS.md.")
             return
         new_content = pattern.sub("", existing)
         OPENCODE_MD.write_text(new_content, encoding="utf-8")
